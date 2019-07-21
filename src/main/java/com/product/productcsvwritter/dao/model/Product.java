@@ -1,15 +1,39 @@
-package com.product.productcsvwritter;
+package com.product.productcsvwritter.dao.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@Setter
+@Getter
+@JsonIgnoreProperties
+@Builder
 public class Product implements Serializable{
 	
+	@Id
 	String uuId;
 	String name;
 	String description;
 	String provider;
 	String available;
 	String measurementUnits;
+	String modifiedDate;
+	String createdDate;
+	
 	public String getUuId() {
 		return uuId;
 	}
